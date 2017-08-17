@@ -202,12 +202,12 @@ public class Image {
 		gdImagePixelate(internalImage, Int32(blockSize), GD_PIXELATE_AVERAGE.rawValue)
 	}
 
-	public func blur(radius: Int) {
-		if let result = gdImageCopyGaussianBlurred(internalImage, Int32(radius), -1) {
-			gdImageDestroy(internalImage)
-			internalImage = result
-		}
-	}
+	//public func blur(radius: Int) {
+		//if let result = gdImageCopyGaussianBlurred(internalImage, Int32(radius), -1) {
+			//gdImageDestroy(internalImage)
+			//internalImage = result
+		//}
+	//}
 
 	public func colorize(using color: Color) {
 		gdImageColor(internalImage, Int32(color.redComponent * 255), Int32(color.greenComponent * 255), Int32(color.blueComponent * 255), 127 - Int32(color.alphaComponent * 127.0))
